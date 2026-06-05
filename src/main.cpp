@@ -11,7 +11,7 @@ void key_callback(GLFWwindow * window, int key, int scancode, int action, int mo
 
 int main() {
     if (!glfwInit()) {
-        std::cout << "Fatal: Faliled to initialize OpenGL" << std::endl;
+        std::cerr << "Fatal: Faliled to initialize OpenGL" << std::endl;
         return -1;
     }
 
@@ -23,14 +23,14 @@ int main() {
 
     if (!window)
     {
-        std::cout << "Fatal: Failed to create GLFW window" << std::endl;
+        std::cerr << "Fatal: Failed to create GLFW window" << std::endl;
         glfwTerminate();
         return -1;        
     }
 
     glewExperimental = GL_TRUE;
     if (!glewInit()) {
-        std::cout << "Fatal: Faliled to initialize GLEW" << std::endl;
+        std::cerr << "Fatal: Faliled to initialize GLEW" << std::endl;
         return -1;        
     }
 
@@ -41,12 +41,11 @@ int main() {
     glfwSetKeyCallback(window, key_callback);
 
     while (!glfwWindowShouldClose(window)) {
-        glfwPollEvents();
-        
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
         glfwSwapBuffers(window);
+        glfwPollEvents();
     }
 
     glfwTerminate();

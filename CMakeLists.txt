@@ -1,10 +1,13 @@
 cmake_minimum_required(VERSION 3.25)
 
 set(target_name Triangle)
+
 project(${target_name} CXX)
 
-add_executable(${target_name})
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-target_compile_options(Triangle PRIVATE -Wno-deprecated-declarations)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${OUTPUT_DIRECTORY})
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${OUTPUT_DIRECTORY})
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
 add_subdirectory(src)

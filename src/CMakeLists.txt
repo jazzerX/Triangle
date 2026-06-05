@@ -1,11 +1,6 @@
 cmake_minimum_required(VERSION 3.25)
 
-project(test_project CXX)
-
-target_include_directories(${target_name} PRIVATE
-
-)
-
+add_executable(${target_name})
 
 target_sources(${target_name}
     PRIVATE

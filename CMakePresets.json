@@ -12,7 +12,7 @@
             "displayName": "Configure Preset",
             "description": "Ninja generator",
             "generator": "Ninja",
-            "binaryDir": "${sourceDir}/build/${presetName}"     
+            "binaryDir": "${sourceDir}/build/obj/${presetName}"     
         },
         {
             "inherits": "default",
@@ -20,7 +20,8 @@
             "displayName": "Debug",
             "description": "Debug build",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug"
+                "CMAKE_BUILD_TYPE": "debug",
+                "OUTPUT_DIRECTORY": "${sourceDir}/build/exe/${presetName}"
             }
         },
         {
@@ -29,7 +30,8 @@
             "displayName": "Release",
             "description": "Release build",
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Release"
+                "CMAKE_BUILD_TYPE": "release",
+                "OUTPUT_DIRECTORY": "${sourceDir}/build/exe/${presetName}"
             }    
         }
     ],
