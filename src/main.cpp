@@ -40,6 +40,9 @@ int main() {
 
     glfwSetKeyCallback(window, key_callback);
 
+    glfwMakeContextCurrent(window);
+    std::cout << "OpenGL Version: " << glGetString(GL_VERSION) << std::endl;
+
     while (!glfwWindowShouldClose(window)) {
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
