@@ -15,8 +15,8 @@ int main() {
         return -1;
     }
 
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     GLFWwindow * window = glfwCreateWindow(800, 600, "Triangle", nullptr, nullptr);
@@ -44,7 +44,7 @@ int main() {
     std::cout << "OpenGL Version: " << glGetString(GL_VERSION) << std::endl;
 
     while (!glfwWindowShouldClose(window)) {
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        glClearColor(0.114f, 0.000f, 0.231f, 1.000f);
         glClear(GL_COLOR_BUFFER_BIT);
 
         glfwSwapBuffers(window);
