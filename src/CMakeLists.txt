@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.25)
+cmake_minimum_required(VERSION 3.29.5)
 
 add_executable(${target_name})
 
@@ -16,4 +16,3 @@ target_link_libraries(${target_name} PRIVATE
     OpenGL::GL
     GLEW::GLEW
 )
-
