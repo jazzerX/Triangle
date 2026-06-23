@@ -1,8 +1,8 @@
 #version 410 core
 
-in vec4 vertexColor;
-
 out vec4 color;
+
+uniform vec4 vertexColor;
 
 void main() {
     color = vertexColor;

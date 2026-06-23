@@ -1,6 +1,9 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
+#include <OpenGL/gl.h>
+#include <OpenGL/gltypes.h>
+#include <cmath>
 #include <iostream>
 #include <sstream>
 #include <fstream>
@@ -144,7 +147,17 @@ int main() {
         glClearColor(0.114f, 0.000f, 0.231f, 1.000f);
         glClear(GL_COLOR_BUFFER_BIT);
 
+        GLfloat currTime = glfwGetTime();
+        GLfloat r = (sin(currTime) / 2) + 0.5;
+        GLfloat g = 0.0f;
+        GLfloat b = 0.0f;
+        GLfloat w = 1.0f;
+
+        GLint vertexColorLocation = glGetUniformLocation(shaderProgram, "vertexColor");
+
         glUseProgram(shaderProgram);
+        glUniform4f(vertexColorLocation, r, g, b, w);
+        
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
         glBindVertexArray(0);
