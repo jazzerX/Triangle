@@ -5,6 +5,13 @@ add_executable(${target_name})
 target_sources(${target_name}
     PRIVATE
         main.cpp
+        Figure.cpp
+        Drawer.cpp
+        Shader.cpp
+    PUBLIC
+        Figure.h
+        Drawer.h
+        Shader.h
 )
 
 find_package(glfw3 REQUIRED)
