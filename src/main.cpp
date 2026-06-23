@@ -109,12 +109,13 @@ int main() {
         -0.5f,  0.5f, 0.0f,
         -0.5f, -0.5f, 0.0f,
          0.5f, -0.5f, 0.0f,
-         0.5f,  0.5f, 0.0f
+         0.5f,  0.5f, 0.0f,
+        -0.0f, 0.5f, 0.0f
     };
 
     GLuint indices[] = {
-        0, 1, 3,
-        1, 2, 3
+        4, 1, 2,
+        //1, 2, 3
     };
 
     GLuint VBO, VAO, EBO;
@@ -145,7 +146,7 @@ int main() {
 
         glUseProgram(shaderProgram);
         glBindVertexArray(VAO);
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
         glBindVertexArray(0);
 
         glfwSwapBuffers(window);
