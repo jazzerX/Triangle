@@ -8,7 +8,7 @@ struct IDrawer {
   virtual ~IDrawer() {};
 };
 
-class DynamicColorDraw : public IDrawer {
+// TODO: add change color
 class PulsatingDrawer : public IDrawer {
 private:
   GLuint _shaderProgram;

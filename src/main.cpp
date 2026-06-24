@@ -4,7 +4,7 @@
 #include <OpenGL/gltypes.h>
 
 #include <iostream>
-#include <fstream>
+#include <filesystem>
 
 #include "Figure.h"
 #include "Drawer.h"
@@ -67,7 +67,7 @@ int main() {
     Shader shaderProgram = Shader(vert.string(), frag.string());
 
     Triangle t(1, vertices, sizeof(vertices));
-    std::unique_ptr<IDrawer> d = std::make_unique<DynamicColorDraw>(shaderProgram.GetPogram());
+    // TODO: press 1, 2, 3, etc to change drawing type
     std::unique_ptr<IDrawer> d = std::make_unique<PulsatingDrawer>(shaderProgram.GetPogram());
 
     while (!glfwWindowShouldClose(window)) {
