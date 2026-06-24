@@ -1,7 +1,7 @@
 #include "Drawer.h"
 #include <cmath>
 
-void DynamicColorDraw::Draw(GLuint VAO) {
+void PulsatingDrawer::Draw(GLuint VAO) {
   GLfloat currTime = glfwGetTime();
   GLfloat r = (sin(currTime) / 2) + 0.5;
   GLfloat g = 0.0f;

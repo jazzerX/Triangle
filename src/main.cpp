@@ -68,6 +68,7 @@ int main() {
 
     Triangle t(1, vertices, sizeof(vertices));
     std::unique_ptr<IDrawer> d = std::make_unique<DynamicColorDraw>(shaderProgram.GetPogram());
+    std::unique_ptr<IDrawer> d = std::make_unique<PulsatingDrawer>(shaderProgram.GetPogram());
 
     while (!glfwWindowShouldClose(window)) {
         glClearColor(0.114f, 0.000f, 0.231f, 1.000f);

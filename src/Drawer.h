@@ -9,11 +9,12 @@ struct IDrawer {
 };
 
 class DynamicColorDraw : public IDrawer {
+class PulsatingDrawer : public IDrawer {
 private:
   GLuint _shaderProgram;
 
 public:
-  DynamicColorDraw(GLuint shaderProgram) : _shaderProgram(shaderProgram) {};
+  PulsatingDrawer(GLuint shaderProgram) : _shaderProgram(shaderProgram) {};
 
   virtual void Draw(GLuint VAO) override;
 };
